@@ -1,4 +1,4 @@
-DataMigration v0.1
+data_migration v0.1
 ==============
 DataMigration allows you to separate data you need to load from your 
 normal database migrations in a minimal way.
