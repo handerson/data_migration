@@ -1,0 +1,40 @@
+DataMigration v0.1
+==============
+DataMigration allows you to separate data you need to load from your 
+normal database migrations in a minimal way.
+
+Example
+=======
+
+-Generate Migration
+	script/generate data_migration BlockedDomains
+
+	-Outputs:
+		exists  db/data
+		create  db/data/20090915161242_settings.rb
+
+	-db/data/20090915161242_settings.rb:
+		class BlockedDomains < ActiveRecord::Migration
+		  def self.up
+		  end
+		end
+		
+	-Add your code:
+		def self.up
+		    BlockedEmailDomain.create(:domain => "mailinator.com")
+		    BlockedEmailDomain.create(:domain => "spamherelots.com")
+		    BlockedEmailDomain.create(:domain => "disposeamail.com")
+		end
+
+-Run Migration
+	rake db:data:migrate
+
+	-Output
+		==  BlockedDomains: migrating ===========================================================
+		==  BlockedDomains: migrated (0.0020s) ==================================================
+
+	This adds the data migration version nubmer to the 'schema_migrations' table. So it will not
+	be ran again.
+
+Copyright (c) 2009 Knetwit Inc, released under the MIT license
+Author(s): Heath Anderson

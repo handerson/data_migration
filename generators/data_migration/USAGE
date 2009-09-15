@@ -1,0 +1,8 @@
+Description:
+    Creates a new data migration file in 'db/data'.
+
+Example:
+    ./script/generate data_migration Settings
+
+    This will create:
+        db/data/20090915160743_settings.rb
