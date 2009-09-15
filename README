@@ -1,6 +1,6 @@
 data_migration v0.1
 ==============
-DataMigration allows you to separate data you need to load from your 
+data_migration allows you to separate data you need to load from your 
 normal database migrations in a minimal way.
 
 Example
@@ -33,7 +33,7 @@ Example
 		==  BlockedDomains: migrating ===========================================================
 		==  BlockedDomains: migrated (0.0020s) ==================================================
 
-	This adds the data migration version nubmer to the 'schema_migrations' table. So it will not
+	This adds the data migration version nubmer to the 'schema_migrations' table so it will not
 	be ran again.
 
 Copyright (c) 2009 Knetwit Inc, released under the MIT license
